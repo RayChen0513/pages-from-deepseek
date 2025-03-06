@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>進位系統轉換器</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="style.css">
+    <script src="converter.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>進位系統轉換器</h1>
+        <div class="row">
+            <label for="inputNumber">輸入數值：</label>
+            <input type="text" id="inputNumber" placeholder="請輸入數值">
+        </div>
+        <div class="row">
+            <div class="column">
+                <label for="inputBase">輸入進制：</label>
+                <select id="inputBase" onchange="checkCustomInput('inputBase', 'customInputBase')">
+                    <option value="2">二進制</option>
+                    <option value="4">四進制</option>
+                    <option value="8">八進制</option>
+                    <option value="10" selected>十進制</option>
+                    <option value="16">十六進制</option>
+                    <option value="BCD">BCD</option>
+                    <option value="Gray">格雷碼</option>
+                    <option value="Excess3">加3碼</option>
+                    <option value="Other">其他</option>
+                </select>
+                <input type="number" id="customInputBase" placeholder="17-63" style="display:none;" min="17" max="63">
+            </div>
+            <div class="column">
+                <label for="outputBase">目標進制：</label>
+                <select id="outputBase" onchange="checkCustomInput('outputBase', 'customOutputBase')">
+                    <option value="2">二進制</option>
+                    <option value="4">四進制</option>
+                    <option value="8">八進制</option>
+                    <option value="10" selected>十進制</option>
+                    <option value="16">十六進制</option>
+                    <option value="BCD">BCD</option>
+                    <option value="Gray">格雷碼</option>
+                    <option value="Excess3">加3碼</option>
+                    <option value="Other">其他</option>
+                </select>
+                <input type="number" id="customOutputBase" placeholder="17-63" style="display:none;" min="17" max="63">
+            </div>
+        </div>
+        <div class="row">
+            <button id="convertButton" class="buttonX">轉換</button>
+            <button id="swapButton" class="buttonX">調換</button>
+        </div>
+        <div class="row">
+            <p>結果：<span id="result"></span></p>
+        </div>
+    </div>
+</body>
+</html>

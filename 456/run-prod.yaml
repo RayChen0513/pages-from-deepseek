@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: prod
+spec:
+  template:
+    spec:
+      containers:
+      - image: us-central1-docker.pkg.dev/cohesive-photon-448506-f8/project-60634/my-app:latest

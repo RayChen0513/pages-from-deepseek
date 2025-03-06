@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <!-- 基本元數據 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="專業網頁開發者兼UI/UX設計師 | 5年以上經驗 | 精通現代前端技術">
+    <meta name="keywords" content="網頁開發, 前端工程, UI設計, 作品集">
+    
+    <!-- Open Graph 社交媒體分享數據 -->
+    <meta property="og:title" content="陳大文 | 全端開發者">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/og-image.jpg">
+    
+    <!-- 網站圖標 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- 谷歌字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&family=Roboto+Mono:wght@300;500&display=swap" rel="stylesheet">
+    
+    <!-- 自定義樣式 -->
+    <style>
+        /* 基礎重置與排版系統 */
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5BA4E6;
+            --accent-color: #FF6B6B;
+            --dark-gray: #2D3436;
+            --light-gray: #F5F6FA;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* 工具類 */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* 導航欄 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        /* 主頁英雄區 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* 作品集網格系統 */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    
+    <title>陳大文 | 全端開發者</title>
+</head>
+
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo">JohnDoe.dev</a>
+            <ul class="nav-menu">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+                <li><a href="#blog">部落格</a></li>
+                <li><a href="#contact">聯絡</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主頁內容 -->
+    <main>
+        <!-- 英雄區 -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">將創意轉化為<br>數位體驗</h1>
+                    <p class="hero-subtitle">全端開發者 & UI/UX 設計師</p>
+                    <div class="cta-buttons">
+                        <a href="#portfolio" class="btn">查看作品</a>
+                        <a href="#contact" class="btn-outline">聯絡我</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 關於我 -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">關於我</h2>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="profile.jpg" alt="陳大文個人照" loading="lazy">
+                    </div>
+                    <div class="about-content">
+                        <h3>技術堆疊</h3>
+                        <div class="skills-container">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">前端開發</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <!-- 更多技能條 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品集 -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title">精選作品</h2>
+                <div class="portfolio-grid">
+                    <article class="portfolio-item">
+                        <img src="project1.jpg" alt="電子商務平台" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>電子商務平台</h3>
+                            <p>使用React和Node.js打造的完整購物解決方案...</p>
+                            <a href="#" class="project-link">查看詳情 →</a>
+                        </div>
+                    </article>
+                    <!-- 更多作品項目 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>快速連結</h4>
+                    <ul>
+                        <li><a href="#about">關於</a></li>
+                        <li><a href="#portfolio">作品</a></li>
+                        <li><a href="#blog">部落格</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>技術聲明</h4>
+                    <p>本網站使用原生HTML/CSS/JavaScript構建...</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 陳大文 版權所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 腳本 -->
+    <script>
+        // 平滑滾動功能
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 動態載入效果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-item, .skill-bar').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 表單驗證
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                const email = document.getElementById('email').value;
+                if (!validateEmail(email)) {
+                    e.preventDefault();
+                    showError('請輸入有效的電子郵件地址');
+                }
+            });
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

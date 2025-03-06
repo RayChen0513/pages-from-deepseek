@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李明達 | 個人網站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 基礎重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* 導航欄 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 首頁區 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: slideUp 1s ease;
+        }
+
+        /* 關於我 */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-img {
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 作品集 */
+        .portfolio {
+            padding: 5rem 2rem;
+            background: var(--light-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform var(--transition-speed);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        /* 技能條 */
+        .skills {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .skill-bar {
+            background: #eee;
+            border-radius: 20px;
+            margin: 1rem 0;
+            height: 20px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary-color);
+            border-radius: 20px;
+            transition: width 1s ease;
+        }
+
+        /* 聯絡表單 */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light-color);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color var(--transition-speed);
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* 動畫 */
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <h2>李明達</h2>
+        <div class="nav-links">
+            <a href="#home">首頁</a>
+            <a href="#about">關於我</a>
+            <a href="#portfolio">作品集</a>
+            <a href="#skills">技能</a>
+            <a href="#contact">聯絡</a>
+        </div>
+    </nav>
+
+    <!-- 首頁區 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>前端開發者 & UI設計師</h1>
+            <p class="scroll-reveal">專注於創造優美且高效的網路體驗</p>
+        </div>
+    </section>
+
+    <!-- 關於我 -->
+    <section id="about" class="about">
+        <div class="about-grid">
+            <img src="profile.jpg" alt="李明達" class="about-img scroll-reveal">
+            <div class="about-content scroll-reveal">
+                <h2>關於我</h2>
+                <p>擁有5年全端開發經驗的前端工程師，擅長將複雜需求轉化為優雅的解決方案...</p>
+                <!-- 此處可添加更多內容 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="scroll-reveal">精選作品</h2>
+        <div class="portfolio-grid">
+            <!-- 添加多個作品項目 -->
+            <div class="portfolio-item scroll-reveal">
+                <img src="project1.jpg" alt="專案1">
+                <div class="portfolio-content">
+                    <h3>電子商務平台</h3>
+                    <p>使用React與Node.js打造的現代化電商解決方案...</p>
+                </div>
+            </div>
+            <!-- 重複類似結構增加字節數 -->
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="skills">
+        <h2 class="scroll-reveal">專業技能</h2>
+        <div class="skills-container">
+            <div class="skill scroll-reveal">
+                <h3>HTML/CSS</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%"></div>
+                </div>
+            </div>
+            <!-- 添加更多技能條 -->
+        </div>
+    </section>
+
+    <!-- 聯絡 -->
+    <section id="contact" class="contact">
+        <h2 class="scroll-reveal">聯絡我</h2>
+        <form class="contact-form">
+            <div class="form-group scroll-reveal">
+                <input type="text" placeholder="姓名">
+            </div>
+            <div class="form-group scroll-reveal">
+                <input type="email" placeholder="電子郵件">
+            </div>
+            <div class="form-group scroll-reveal">
+                <textarea rows="5" placeholder="訊息"></textarea>
+            </div>
+            <button class="scroll-reveal">傳送訊息</button>
+        </form>
+    </section>
+
+    <script>
+        // 滾動動畫觸發
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // 導航欄滾動效果
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                document.querySelector('.navbar').style.background = 'rgba(255,255,255,0.98)';
+            } else {
+                document.querySelector('.navbar').style.background = 'rgba(255,255,255,0.95)';
+            }
+        });
+
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

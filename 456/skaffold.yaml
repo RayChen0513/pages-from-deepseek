@@ -1,0 +1,13 @@
+apiVersion: skaffold/v3alpha1
+kind: Config
+deploy:
+  cloudrun: {}
+profiles:
+- name: dev
+  manifests:
+    rawYaml:
+    - run-dev.yaml
+- name: prod
+  manifests:
+    rawYaml:
+    - run-prod.yaml
